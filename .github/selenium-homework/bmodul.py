@@ -1,3 +1,4 @@
-def pitagoras(a, b):
-    c2 = a ** a + b ** b
-    return c2
+def c(a, b):
+    print(a+b)
+
+c(2, 3)

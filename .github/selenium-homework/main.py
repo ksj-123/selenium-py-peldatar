@@ -1,5 +1,5 @@
-from c2 import bmodul
+from c import bmodul
 
 
-print(bmodul;c2(3,4))
+print(bmodul;c)
 
