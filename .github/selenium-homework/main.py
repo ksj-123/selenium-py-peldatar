@@ -1,5 +1,3 @@
-from c import bmodul
+import bmodul
 
-
-print(bmodul;c)
-
+print(bmodul.c(3, 4))
