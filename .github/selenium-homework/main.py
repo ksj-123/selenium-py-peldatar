@@ -1,3 +1,3 @@
 import bmodul
 
-print(bmodul.c(3, 4))
+print(bmodul.add(3, 4))
