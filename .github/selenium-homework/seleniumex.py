@@ -1,13 +1,13 @@
 from selenium import webdriver
 
 driver = webdriver.Chrome()
+driver.get("https://google.com")
 
-driver.get("https://python.org")
+q = driver.find_element_by_id("""<div id="nemletezik"></div""")
 
-q = driver.find_element_by_name("q")
-q.send_keys("news")
-
-submit = driver.find_element_by_name("submit")
-submit.click()
+try:
+    x = input("""<div id="nemletezik"></div""")
+except ValueError:
+    print("Oops!  That was no valid number.  Try again...")
 
 driver.close()
