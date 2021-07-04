@@ -41,23 +41,19 @@ what you're at-- there"; and he threw down three or four gold pieces on
 the threshold. "You can tell me when I've worked through that," says he,
 looking as fierce as a commander."""
 
-# Először a TEXT szövegben a "," -t és a "-"-t helyettesítjük (semmivel ("")), illetve kivesszük a szövegből, majd
-# létrehozva a "result" változót beletesszük szavanként az összes (\b\w+) előfordulásával a TEXT szöveget módosítást követően,
-# majd kiírjuk azt
 pre_processed = TEXT.replace(",", "")
 pre_processed = pre_processed.replace("-", "")
+
 result = re.findall(r"\b\w+", TEXT)
 print(result)
-# A result változóban lévő szavakban lévő betűket kisbetűssé alakítjuk (word.lower), majd megszámozzuk
-# (és kiíratjuk annak számát) a szavakat a "result" változóban, úgy a szavak indexéhez hozzáadunk 1-et (hiszen
-# az indexek 0-tól kezdődnek), majd ezt kiírjuk
+
 counts = {}
+
 for word in result:
     word = word.lower()
     counts[word] = counts.get(word, 0) + 1
-# a "kisbetűs result" változóban megszámoljuk a szavakat, melyeket fordított sorrenben iratunk ki (tehát a legnagyobb számtól
-# megyünk a legkisebb felé, (a lambda függvény tulajdonképpen azért kell, mert meg akarjuk csináltatni vele a feladatot úgy
-# hogy nem érdekel mindet a hogyan, csak az hogy gyorsan csinálja
+
 sorted_results = sorted(list(counts.items()), key=lambda item: -item[1])
+
 for count in sorted_results:
     print(f'{count[0]} {count[1]}', end=' ')
